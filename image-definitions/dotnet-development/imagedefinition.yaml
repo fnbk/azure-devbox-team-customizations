@@ -1,0 +1,28 @@
+$schema: "1.0"
+name: "dotnet-development"
+image: win11-vs2022-vscode-openai-florian
+description: "This definition is for a dotnet application developement environment"
+
+tasks:
+  - name: ~/winget
+    description: Install AZD
+    parameters:
+      package:  Microsoft.Azd
+
+  - name: ~/winget
+    description: Install Dotnet 9.0
+    parameters:
+      package:  Microsoft.DotNet.SDK.9
+
+  - name: ~/winget
+    description: Install Visual Studio Code
+    parameters:
+      package:  Microsoft.VisualStudioCode
+
+  - name: ~/powershell
+    description: Configure Visual Studio Code
+    parameters:
+      command: |
+        $env:Path = [System.Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path','User')
+        code --install-extension ms-dotnettools.csdevkit
+        code --install-extension ms-dotnettools.csharp
