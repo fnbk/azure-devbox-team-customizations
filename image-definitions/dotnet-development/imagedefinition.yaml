@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: "dotnet-development"
-image: win11-vs2022-vscode-openai-florian
+image: MicrosoftWindowsDesktop_windows-ent-cpc_win11-24h2-ent-cpc-m365
 description: "This definition is for a dotnet application developement environment"
 
 tasks:
